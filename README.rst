@@ -2,6 +2,7 @@ Development environment with:
 
 - python 2
 - python 3
+- R
 - scrapy suite
 - scrapinghub suite
 - octave

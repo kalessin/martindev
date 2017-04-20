@@ -51,6 +51,7 @@ COPY vimrc /root/.vimrc
 RUN mkdir -p /root/backup/vim/swap
 
 RUN apt-get install -qy octave
+RUN apt-get install -qy aptitude ack-grep r-base r-base-core r-base-core-dbg r-base-dev
 
 ADD . /app
 
