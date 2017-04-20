@@ -10,6 +10,10 @@ Build instructions::
 
     docker build -t kalessin/martindev .
 
+Alternatively::
+
+    docker pull kalessin/martindev:latest
+
 Run instructions::
 
     docker run -ti -v <git directory>:/app/git kalessin/martindev /bin/bash
