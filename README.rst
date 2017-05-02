@@ -22,7 +22,7 @@ Push::
 
 Run instructions::
 
-    docker run -ti -v <git directory>:/app/git kalessin/martindev /bin/bash
+    docker run -ti kalessin/martindev /bin/bash
 
 If want to run jupyter, don't forget to map the port to host machine::
 
@@ -33,3 +33,19 @@ And once logged in container console, run jupyter notebook with following option
     $ jupyter notebook --no-browser --ip=0.0.0.0
 
 So you can access from host by pointing browser to 127.0.0.1:8888
+
+If some application running in the container needs access to host X server, you can follow these instructions::
+
+    XSOCK=/tmp/.X11-unix
+    XAUTH=/tmp/.docker.xauth
+    touch XAUTH
+    xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f /tmp/.docker.xauth nmerge -
+
+Those instructions make available the host X socket and authorization credentials for applications running in container.
+
+Then run a new container as follows::
+
+    docker run -ti -v $XSOCK:$XSOCK:rw -v $XAUTH:$XAUTH:rw -e DISPLAY -e XAUTHORITY=${XAUTH} kalessin/martindev /bin/bash
+
+It is not the safest way to grant applications running in container access X server as root, but it is the simplest one. For more elaborated alternatives, check
+`<http://wiki.ros.org/docker/Tutorials/GUI>`_
