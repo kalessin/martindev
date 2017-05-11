@@ -53,8 +53,10 @@ RUN mkdir -p /root/backup/vim/swap
 RUN apt-get install -qy octave
 RUN apt-get install -qy aptitude ack-grep r-base r-base-core r-base-core-dbg r-base-dev
 
+RUN pip3 install --upgrade pip
 RUN pip3 install jupyter
 RUN apt-get install less
+RUN pip3 install scipy==0.19.0 sklearn
 
 ADD . /app
 
