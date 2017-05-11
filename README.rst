@@ -7,6 +7,10 @@ Development environment with:
 - scrapy suite
 - scrapinghub suite
 - octave
+- scipy & sklearn
+
+Install/Run
+===========
 
 Build instructions::
 
@@ -16,13 +20,12 @@ Alternatively::
 
     docker pull kalessin/martindev:latest
 
-Push::
-
-    docker push kalessin/martindev:latest
-
 Run instructions::
 
     docker run -ti kalessin/martindev /bin/bash
+
+Running Jupyter notebook
+========================
 
 If want to run jupyter, don't forget to map the port to host machine::
 
@@ -34,14 +37,18 @@ And once logged in container console, run jupyter notebook with following option
 
 So you can access from host by pointing browser to 127.0.0.1:8888
 
-If some application running in the container needs access to host X server, you can follow these instructions::
+Running X applications
+======================
+
+
+If some application running in the container needs access to host X server, first run following commands in host machine running X server::
 
     XSOCK=/tmp/.X11-unix
     XAUTH=/tmp/.docker.xauth
-    touch XAUTH
-    xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f /tmp/.docker.xauth nmerge -
+    touch $XAUTH
+    xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 
-Those instructions make available the host X socket and authorization credentials for applications running in container.
+Those steps make available the host X socket and authorization credentials for applications running in container.
 
 Then run a new container as follows::
 
