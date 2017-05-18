@@ -57,6 +57,7 @@ RUN pip3 install --upgrade pip
 RUN pip3 install jupyter
 RUN apt-get install less
 RUN pip3 install scipy==0.19.0 sklearn
+RUN pip3 install neurolab
 
 ADD . /app
 

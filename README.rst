@@ -3,11 +3,12 @@ Development environment with:
 - python 2
 - python 3
 - R
-- jupyter notebook (aka ipython notebook)
-- scrapy suite
-- scrapinghub suite
+- jupyter notebook (aka ipython notebook) (python3)
+- scrapy suite (python2)
+- scrapinghub suite (python2)
 - octave
-- scipy & sklearn
+- scipy & sklearn (python3)
+- neurolab (python3)
 
 Install/Run
 ===========
