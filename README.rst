@@ -7,8 +7,13 @@ Development environment with:
 - scrapy suite (python2)
 - scrapinghub suite (python2)
 - octave
-- scipy & sklearn (python3)
+- scipy & sklearn & matplotlib (python3)
 - neurolab (python3)
+- TensorFlow (no GPU support*) (python3)
+
+* If you have a GPU, follow rules here to install TensorFlow with GPU support instead:
+
+`https://www.tensorflow.org/install/install_linux#determine_which_tensorflow_to_install`_
 
 Install/Run
 ===========
@@ -30,7 +35,7 @@ Running Jupyter notebook
 
 If want to run jupyter, don't forget to map the port to host machine::
 
-    docker run -ti -v <git directory>:/app/git -p 127.0.0.1:8888:8888 kalessin/martindev /bin/bash
+    docker run -ti -v <host notebooks folder>:/app/jupyter -p 127.0.0.1:8888:8888 kalessin/martindev /bin/bash
 
 And once logged in container console, run jupyter notebook with following options::
 
