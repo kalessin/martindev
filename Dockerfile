@@ -59,6 +59,8 @@ RUN apt-get install less
 RUN pip3 install scipy==0.19.0 sklearn
 RUN pip3 install neurolab
 RUN pip3 install tensorflow==1.2.0 matplotlib==2.0.2 pillow==4.1.1
+RUN pip3 install scrapely
+RUN pip3 install numpy==1.13.0
 
 ADD . /app
 
