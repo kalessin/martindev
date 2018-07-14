@@ -3,13 +3,19 @@ Development environment with:
 - python 2
 - python 3
 - R
-- jupyter notebook (aka ipython notebook) (python3)
-- scrapy suite (python2)
-- scrapinghub suite (python2)
 - octave
-- scipy & sklearn & matplotlib (python3)
-- neurolab (python3)
-- TensorFlow (no GPU support*) (python3)
+
+python2:
+- scrapy suite
+- scrapinghub suite
+
+python 3:
+- jupyter notebook (aka ipython notebook)
+- scipy & sklearn & matplotlib
+- neurolab
+- TensorFlow (no GPU support*)
+- pandas
+- geopandas & mplleaflet
 
 * If you have a GPU, follow rules here to install TensorFlow with GPU support instead:
 
