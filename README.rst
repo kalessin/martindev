@@ -1,15 +1,10 @@
 Development environment with:
 
-- python 2
 - python 3
 - R
 - octave
-
-python2:
 - scrapy suite
 - scrapinghub suite
-
-python 3:
 - jupyter notebook (aka ipython notebook)
 - scipy & sklearn & matplotlib
 - neurolab
