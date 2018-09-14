@@ -40,7 +40,7 @@ If want to run jupyter, don't forget to map the port to host machine::
 
 And once logged in container console, run jupyter notebook with following options::
 
-    $ jupyter notebook --no-browser --ip=0.0.0.0
+    $ jupyter notebook --no-browser --allow-root --ip=0.0.0.0
 
 So you can access from host by pointing browser to 127.0.0.1:8888
 
