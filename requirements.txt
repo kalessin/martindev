@@ -7,6 +7,8 @@ fake-useragent
 slybot==0.12.1
 scrapinghub==2.0.3
 exporters==0.6.10
+nose
+shub
 
 # Spidermon
 python-slugify==1.0.2
@@ -48,3 +50,4 @@ pandas==0.22.0
 xlrd
 geopandas
 mplleaflet
+odfpy==1.3.6
