@@ -9,6 +9,9 @@ scrapinghub==2.0.3
 exporters==0.6.10
 nose
 shub
+twine
+scrapy-frontera
+hcf-backend
 
 # Spidermon
 python-slugify==1.0.2
