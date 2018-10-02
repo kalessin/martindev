@@ -18,7 +18,6 @@ RUN apt-get update -qq && \
         libxml2-dev \
         libssl-dev \
         libxslt1-dev \
-        libmysqlclient-dev \
         libpq-dev \
         libevent-dev \
         libffi-dev \
@@ -27,8 +26,8 @@ RUN apt-get update -qq && \
         unixodbc unixodbc-dev \
         telnet vim htop iputils-ping curl wget lsof git sudo \
         ghostscript \
-        ruby2.1 ruby2.1-dev \
-        less aptitude ack-grep \
+        ruby ruby-dev \
+        less aptitude ack-grep groff \
         octave r-base r-base-core r-base-core-dbg r-base-dev
 
 # http://unix.stackexchange.com/questions/195975/cannot-force-remove-directory-in-docker-build
@@ -38,7 +37,7 @@ RUN apt-get update -qq && \
 COPY locales /etc/locale.gen
 RUN locale-gen
 
-RUN gem2.1 install travis -v 1.8.8 --no-rdoc --no-ri
+RUN gem install travis -v 1.8.8 --no-rdoc --no-ri
 
 RUN pip3 install --upgrade pip
 
