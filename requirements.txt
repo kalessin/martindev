@@ -55,3 +55,4 @@ geopandas
 descartes
 mplleaflet
 odfpy==1.3.6
+seaborn
