@@ -52,5 +52,6 @@ numpy==1.13.0
 pandas==0.22.0
 xlrd
 geopandas
+descartes
 mplleaflet
 odfpy==1.3.6
