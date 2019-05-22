@@ -60,3 +60,4 @@ seaborn
 netcdf4
 xarray
 pyarrow
+graphviz
