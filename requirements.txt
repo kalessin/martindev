@@ -2,12 +2,8 @@ SQLAlchemy>=1.0.0
 frontera==0.7.1
 kafka-python==1.3.4
 kafka-scanner==0.3.4
-msgpack-python==0.5.6
 sqlitedict==1.5.0
 fake-useragent
-slybot==0.12.1
-scrapinghub==2.0.3
-exporters==0.6.10
 nose
 shub
 twine
@@ -15,27 +11,9 @@ scrapy-frontera
 hcf-backend
 shub-workflow
 
-# Spidermon
-python-slugify==1.0.2
-Jinja2==2.7.3
-premailer==2.9.0
-MarkupSafe==0.23
-Unidecode==0.4.14
-jsonschema==2.4.0
-websocket-client==0.31.0
-schematics==1.0.4
-
-#exporters & dependencies
-decorator==4.0.10
-boltons==16.5.1
-jmespath==0.5
-bz2file
-
-
 # collection_scanner deps
 dateparser==0.5.0
 
-# toolbox deps
 # pybloom # no version for s3 at moment
 
 ipython
@@ -43,15 +21,14 @@ flake8
 pytest
 mypy
 jupyter
-scipy==0.19.0
+scipy>=0.19.0
 sklearn
 neurolab
-tensorflow==1.2.0
-matplotlib==2.0.2
-pillow==4.1.1
+tensorflow>=1.2.0
+matplotlib>=2.0.2
 scrapely
 numpy>=1.14
-pandas==0.22.0
+pandas>=0.22.0
 xlrd
 geopandas
 descartes

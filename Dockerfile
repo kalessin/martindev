@@ -1,15 +1,13 @@
-FROM python:3.6
+FROM python:3.7-stretch
 ARG PIP_INDEX_URL
 ARG PIP_TRUSTED_HOST
 ARG APT_PROXY
 ONBUILD ENV PIP_TRUSTED_HOST=$PIP_TRUSTED_HOST PIP_INDEX_URL=$PIP_INDEX_URL
-ONBUILD RUN test -n $APT_PROXY && echo 'Acquire::http::Proxy \"$APT_PROXY\";' \
-    >/etc/apt/apt.conf.d/proxy
+ONBUILD RUN test -n $APT_PROXY && echo 'Acquire::http::Proxy \"$APT_PROXY\";' >/etc/apt/apt.conf.d/proxy
 
 # TERM needs to be set here for exec environments
 # PIP_TIMEOUT so installation doesn't hang forever
-ENV TERM=xterm \
-    PIP_TIMEOUT=180
+ENV TERM=xterm PIP_TIMEOUT=180 SHUB_ENFORCE_PIP_CHECK=1
 
 RUN apt-get update -qq && \
     apt-get install -qy \
@@ -18,6 +16,7 @@ RUN apt-get update -qq && \
         libxml2-dev \
         libssl-dev \
         libxslt1-dev \
+        default-libmysqlclient-dev \
         libpq-dev \
         libevent-dev \
         libffi-dev \
