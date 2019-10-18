@@ -48,6 +48,9 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 RUN apt-get install -y graphviz
 
+COPY extras.sh /extras.sh
+RUN ./extras.sh
+
 COPY vimrc /root/.vimrc
 RUN mkdir -p /root/backup/vim/swap
 
