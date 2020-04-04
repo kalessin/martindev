@@ -1,4 +1,4 @@
-FROM python:3.7-stretch
+FROM buildpack-deps:bionic
 ARG PIP_INDEX_URL
 ARG PIP_TRUSTED_HOST
 ARG APT_PROXY
@@ -8,9 +8,11 @@ ONBUILD RUN test -n $APT_PROXY && echo 'Acquire::http::Proxy \"$APT_PROXY\";' >/
 # TERM needs to be set here for exec environments
 # PIP_TIMEOUT so installation doesn't hang forever
 ENV TERM=xterm PIP_TIMEOUT=180 SHUB_ENFORCE_PIP_CHECK=1
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update -qq && \
-    apt-get install -qy \
+RUN apt-get update -qq && apt-get install -qy python3 libpython3-all-dev aptitude
+
+RUN apt-get install -qy \
         netbase ca-certificates apt-transport-https \
         build-essential locales \
         libxml2-dev \
@@ -26,7 +28,7 @@ RUN apt-get update -qq && \
         telnet vim htop iputils-ping curl wget lsof git sudo \
         ghostscript \
         ruby ruby-dev \
-        less aptitude ack-grep groff \
+        less ack-grep groff \
         octave r-base r-base-core r-base-core-dbg r-base-dev
 
 # http://unix.stackexchange.com/questions/195975/cannot-force-remove-directory-in-docker-build
@@ -37,7 +39,7 @@ COPY locales /etc/locale.gen
 RUN locale-gen
 
 RUN gem install travis -v 1.8.8 --no-rdoc --no-ri
-
+RUN apt-get install -qy python3-pip
 RUN pip3 install --upgrade pip
 
 COPY stack-requirements.txt /stack-requirements.txt
@@ -46,12 +48,10 @@ RUN pip3 install --no-cache-dir -r stack-requirements.txt
 COPY requirements.txt /requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-RUN apt-get install -y graphviz
+RUN apt-get install -y graphviz libclang-4.0-dev python-clang-4.0
 
 COPY extras.sh /extras.sh
 RUN ./extras.sh
-
-RUN apt-get install -y libclang-4.0-dev python-clang-4.0
 
 COPY vimrc /root/.vimrc
 RUN mkdir -p /root/backup/vim/swap
