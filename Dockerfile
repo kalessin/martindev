@@ -51,6 +51,8 @@ RUN apt-get install -y graphviz
 COPY extras.sh /extras.sh
 RUN ./extras.sh
 
+RUN apt-get install -y libclang-4.0-dev python-clang-4.0
+
 COPY vimrc /root/.vimrc
 RUN mkdir -p /root/backup/vim/swap
 
