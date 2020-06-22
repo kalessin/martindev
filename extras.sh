@@ -5,5 +5,5 @@ unzip boost_1_63_0.zip
 sudo mv boost_1_63_0 /usr/local/bin
 
 git clone https://github.com/facebookresearch/StarSpace.git && cd StarSpace && make
-cd python && chmod u+x build.sh && ./build.sh
+cd python && chmod u+x build.sh && ./build.sh && cp starwrap.so /usr/local/lib/python3.6/dist-packages/
 
