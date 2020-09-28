@@ -24,7 +24,7 @@ jupyter
 scipy>=0.19.0
 sklearn
 neurolab
-tensorflow==2.2.0
+tensorflow==2.2.1
 tensorflow-addons==0.10
 matplotlib>=2.0.2
 scrapely
