@@ -44,3 +44,5 @@ nltk
 gensim
 conan
 scikit-optimize
+spacy==2.1.4
+umap-learn

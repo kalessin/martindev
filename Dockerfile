@@ -39,7 +39,8 @@ COPY locales /etc/locale.gen
 RUN locale-gen
 
 RUN gem install travis -v 1.8.8 --no-rdoc --no-ri
-RUN apt-get install -qy python3-pip
+RUN apt-get install -qy python3-pip graphviz libclang-4.0-dev python-clang-4.0 cmake libboost-dev
+RUN pip3 install --upgrade keyrings.alt
 RUN pip3 install --upgrade pip
 
 COPY stack-requirements.txt /stack-requirements.txt
@@ -47,8 +48,6 @@ RUN pip3 install --no-cache-dir -r stack-requirements.txt
 
 COPY requirements.txt /requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
-
-RUN apt-get install -y graphviz libclang-4.0-dev python-clang-4.0 cmake libboost-dev
 
 COPY extras.sh /extras.sh
 RUN ./extras.sh
