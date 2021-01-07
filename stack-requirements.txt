@@ -25,7 +25,7 @@ incremental==17.5.0       # via twisted
 jinja2==2.10.1
 jmespath==0.9.4           # via botocore
 jsonschema==3.0.1
-lxml==4.3.3               # via parsel, premailer, scrapy
+lxml==4.6.2               # via parsel, premailer, scrapy
 markupsafe==1.1.1         # via jinja2
 mock==1.0.1               # via schematics
 monkeylearn==3.2.4
