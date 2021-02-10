@@ -15,7 +15,7 @@ cffi==1.12.3              # via cryptography
 chardet==3.0.4            # via requests
 colorama==0.3.9           # via awscli
 constantly==15.1.0        # via twisted
-cryptography==3.2       # via pyopenssl
+cryptography==3.3.2       # via pyopenssl
 cssselect==1.0.3          # via parsel, premailer, scrapy
 cssutils==1.0.2           # via premailer
 docutils==0.14            # via awscli, botocore
