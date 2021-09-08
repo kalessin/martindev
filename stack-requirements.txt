@@ -31,7 +31,7 @@ mock==1.0.1               # via schematics
 monkeylearn==3.2.4
 msgpack==0.6.1
 parsel==1.5.1             # via scrapy
-pillow==6.2.0
+pillow==8.3.2
 premailer==2.9.2
 pyasn1-modules==0.2.4     # via service-identity
 pyasn1==0.4.5             # via pyasn1-modules, rsa, service-identity
